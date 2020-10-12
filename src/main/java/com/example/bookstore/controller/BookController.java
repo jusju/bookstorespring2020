@@ -22,10 +22,12 @@ public class BookController {
 	
 	@Autowired
 	private CategoryRepository crepository;
+
 	
     @RequestMapping(value="/booklist")
     public String bookList(Model model) {	
         model.addAttribute("books", repository.findAll());
+        System.out.println(repository.findAll());
         return "booklist";
     }
     @RequestMapping(value = "/add")
